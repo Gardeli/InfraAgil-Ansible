@@ -1,0 +1,19 @@
+---
+- name: Minha PlayBook
+  hosts: dexter
+  vars:
+    - pacotes: 
+        - vim
+        - htop
+  tasks:
+    - name: Instala Pacotes RedHat
+      yum: 
+        name: '{{ pacotes }}'
+        state: present
+      when: ansible_os_family == 'RedHat' 
+
+    - name: Instala Pacotes Debian
+      apt: 
+        name: '{{ pacotes }}'
+        state: present
+      when: ansible_os_family == 'Debian' 
