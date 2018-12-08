@@ -1,0 +1,7 @@
+---
+- name: Instala o reporitorio do rundeck
+  yum:
+    name: http://repo.rundeck.org/latest.rpm
+    state: present
+  when: ansible_os_family == "RedHat"
+

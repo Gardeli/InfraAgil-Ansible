@@ -1,0 +1,7 @@
+---
+# handlers file for bluegreen
+- name: Reinicia o nginx 
+  service:
+    name: nginx
+    state: restarted
+
